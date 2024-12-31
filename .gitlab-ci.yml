@@ -2,6 +2,10 @@ stages:
   - test
   - deploy
 
+cache:
+  paths:
+    - .cache/pip
+    
 test:
   stage: test
   image: python:3.9
