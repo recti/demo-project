@@ -1,25 +1,29 @@
-stages:
-  - test
-  - deploy
-
 cache:
   paths:
     - .cache/pip
 
+stages:
+  - test
+  - build
+
 test:
   stage: test
   image: python:3.9
+  parallel: 3
   script:
     - pip install pytest pytest-html
-    - pytest --html=test-results.html
+    - pytest --html=test-results-$CI_NODE_INDEX.html
   artifacts:
     paths:
-      - test-results.html
+      - test-results-*.html
 
-deploy:
-  stage: deploy
-  image: python:3.9
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
   script:
-    - echo "Deploying to production with API key $API_KEY"
-  only:
-    - main
+    - docker build -t my-python-app .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker tag my-python-app $CI_REGISTRY/my-group/my-project:latest
+    - docker push $CI_REGISTRY/my-group/my-project:latest
