@@ -6,11 +6,11 @@ test:
   stage: test
   image: python:3.9
   script:
-    - pip install -r requirements.txt
-    - pytest --junitxml=test-results.xml
+    - pip install pytest pytest-html
+    - pytest --html=test-results.html
   artifacts:
     paths:
-      - test-results.xml
+      - test-results.html
 
 deploy:
   stage: deploy
