@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.6 on win32)" generated="2025-01-06T22:47:27.484171" rpa="false" schemaversion="5">
+<suite id="s1" name="Math Tests" source="C:\Users\anass\Documents\git\demo-project\tests\math_tests.robot">
+<test id="s1-t1" name="Test Addition" line="6">
+<kw name="Add" owner="MyMathLibrary">
+<msg time="2025-01-06T22:47:27.548010" level="INFO">${result} = 5.0</msg>
+<var>${result}</var>
+<arg>2</arg>
+<arg>3</arg>
+<status status="PASS" start="2025-01-06T22:47:27.548010" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-01-06T22:47:27.548010" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-01-06T22:47:27.548010" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-01-06T22:47:27.546406" elapsed="0.002644"/>
+</test>
+<test id="s1-t2" name="Test Subtraction" line="10">
+<kw name="Subtract" owner="MyMathLibrary">
+<msg time="2025-01-06T22:47:27.551044" level="INFO">${result} = 1.0</msg>
+<var>${result}</var>
+<arg>3</arg>
+<arg>2</arg>
+<status status="PASS" start="2025-01-06T22:47:27.550023" elapsed="0.001021"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-01-06T22:47:27.551554" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-01-06T22:47:27.551044" elapsed="0.000510"/>
+</kw>
+<status status="PASS" start="2025-01-06T22:47:27.550023" elapsed="0.001768"/>
+</test>
+<test id="s1-t3" name="Test Multiplication" line="14">
+<kw name="Multiply" owner="MyMathLibrary">
+<msg time="2025-01-06T22:47:27.553078" level="INFO">${result} = 6.0</msg>
+<var>${result}</var>
+<arg>3</arg>
+<arg>2</arg>
+<status status="PASS" start="2025-01-06T22:47:27.553078" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-01-06T22:47:27.554102" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>6</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-01-06T22:47:27.554102" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-01-06T22:47:27.552055" elapsed="0.002047"/>
+</test>
+<status status="PASS" start="2025-01-06T22:47:27.486385" elapsed="0.069710"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Math Tests">Math Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
